@@ -8,6 +8,27 @@ let text = `is a Japanese multinational electronic components and printer manufa
 
 It was founded in 1947 as a precision processor of miniature components, later expanding into automatic lathes, printers, micro audio components, and other fields.
 `;
+function test() {
+  let btmanager = SMBluetoothManagerFactory.getManagerEmulation("BT:StarMicronics", StarIoExtEmulation.EscPosMobile);
+  if (btmanager.open() == false) {
+    console.log('failed to open BluetoothManager');
+    return;
+  }
+  if (btmanager.loadSetting() == false) {
+    console.log('failed to open BluetoothManager');
+    btmanager.close();
+    return;
+  }
+  btmanager.deviceName = "My Star Printer";
+  if (btmanager.apply()) {
+    console.log('Settings saved');
+  }
+  else {
+    console.log('Settings failed');
+  }
+  btmanager.close();
+}
+
 
 function stringToNSData(s: string) {
   return NSString.stringWithString(s).dataUsingEncoding(NSUTF8StringEncoding);

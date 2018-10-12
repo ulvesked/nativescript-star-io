@@ -32,7 +32,13 @@ Usage code snippets here
 
 The plugin API is modeled after the Android version of the StarIO-framework, since the method names in the Android version correspond better to Javascript/Nativescript naming conventions than the iOS version.
 
-Refer to the StarIO SDK documentation for Android for description of what each method does. The methods are listed below
+Refer to the StarIO SDK documentation for Android for description of what each method does. The methods are listed below.
+
+SDK Documentation: 
+https://www.starmicronics.com/support/SDKDocumentation.aspx
+
+For Android: Expand Android -> Java for all Star Printers -> User's Manual
+For iOS: Expand iOS -> Swift/Objective-C for All Star Printers -> User's Manual
     
 ### StarIOPort
 
