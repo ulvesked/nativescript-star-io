@@ -3,5 +3,11 @@
 <plist version="1.0">
 <dict>
 	<!--Describe the permissions, features or other configurations required by your plugin for iOS.-->
+	<key>UISupportedExternalAccessoryProtocols</key>
+    <array>
+        <string>jp.star-m.starpro</string>
+    </array>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>For printing</string>
 </dict>
 </plist>

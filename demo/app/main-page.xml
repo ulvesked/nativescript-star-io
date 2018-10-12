@@ -1,6 +1,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
   xmlns:ui="nativescript-star-io">
   <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <Label text="Available printers" class="t-20 text-center c-black" textWrap="true"/>
+    <Button text="search" tap="{{searchPrinters}}"></Button>
+    <Button text="release" tap="{{releasePort}}"></Button>
+    <Repeater items="{{ printers }}">
+      <Repeater.itemTemplate>
+        <Button text="{{ $value }}" tap="{{ $parents['Page'].connectPrinter }}"></Button>
+      </Repeater.itemTemplate>
+    </Repeater>
   </StackLayout>
 </Page>

@@ -1,0 +1,2 @@
+TNS_TYPESCRIPT_DECLARATIONS_PATH="$(SRCROOT)/typings"
+OTHER_LDFLAGS = $(OTHER_LDFLAGS) -framework CoreBluetooth -framework ExternalAccessory -framework CoreImage

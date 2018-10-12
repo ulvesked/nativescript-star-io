@@ -1,6 +1,60 @@
-import { Common } from './star-io.common';
-export declare class StarIo extends Common {
-  // define your typings manually
-  // or..
-  // take the ios or android .d.ts files and copy/paste them here
+import { StarIOPort } from './stario-port';
+import { StarIOPortInfo } from './stario-portinfo';
+//import { StarIO_StarIoExt } from './starioext';
+import { 
+    Emulation, 
+    CharacterCode, 
+    BcrModel, 
+    DisplayModel, 
+    AlignmentPosition, 
+    BarcodeSymbology, 
+    BarcodeWidth, 
+    BitmapConverterRotation, 
+    BlackMarkType, 
+    CutPaperAction ,
+    FontStyleType, 
+    InitializationType, 
+    InternationalType, 
+    LogoSize, 
+    Pdf417Level, 
+    PeripheralChannel, 
+    PrintableAreaType, 
+    QrCodeLevel, 
+    QrCodeModel, 
+    SoundChannel, 
+    CodePageType, 
+    ContrastMode, 
+    CursorMode,
+    Rect
+} from './common/common';
+import { StarIOCommandBuilder } from './common/commandbuilder';
+export { 
+    StarIOPort, 
+    StarIOPortInfo,
+    //StarIO_StarIoExt,  
+    StarIOCommandBuilder,   
+    Emulation, 
+    CharacterCode, 
+    BcrModel, 
+    DisplayModel, 
+    AlignmentPosition, 
+    BarcodeSymbology, 
+    BarcodeWidth, 
+    BitmapConverterRotation, 
+    BlackMarkType, 
+    CutPaperAction ,
+    FontStyleType, 
+    InitializationType, 
+    InternationalType, 
+    LogoSize, 
+    Pdf417Level, 
+    PeripheralChannel, 
+    PrintableAreaType, 
+    QrCodeLevel, 
+    QrCodeModel, 
+    SoundChannel, 
+    CodePageType, 
+    ContrastMode, 
+    CursorMode, 
+    Rect
 }
