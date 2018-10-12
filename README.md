@@ -38,6 +38,7 @@ SDK Documentation:
 https://www.starmicronics.com/support/SDKDocumentation.aspx
 
 For Android: Expand Android -> Java for all Star Printers -> User's Manual
+
 For iOS: Expand iOS -> Swift/Objective-C for All Star Printers -> User's Manual
     
 ### StarIOPort
