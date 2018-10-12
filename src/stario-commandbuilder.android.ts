@@ -1,4 +1,4 @@
-import * as Common from './common';
+import * as Common from './stario-common';
 
 export class StarIOCommandBuilder {
 

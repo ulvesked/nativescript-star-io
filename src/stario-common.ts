@@ -10,12 +10,12 @@ StarDotImpact STAR Dot Impact emulation.
 export const enum Emulation {
     None,
     StarPRNT,
-    StarPRNTL,
     StarLine,
     StarGraphic,
     EscPos,
     EscPosMobile,
-    StarDotImpact
+    StarDotImpact,
+    StarPRNTL
 } 
 export interface Rect {
     x: number;
