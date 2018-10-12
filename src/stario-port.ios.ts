@@ -1,6 +1,6 @@
 import { StarIOPortInfo } from "./stario-portinfo";
 import { StarIOPrinterStatus } from "./stario-printerstatus";
-import { StarIOCommandBuilder } from "./common/commandbuilder";
+import { StarIOCommandBuilder } from "./stario-commandbuilder";
 
 export class StarIOPort {
 
@@ -10,6 +10,23 @@ export class StarIOPort {
         return SMPort.StarIOVersion();
     }
 
+    static searchPrinter();
+    static searchPrinter(target: string);
+    static searchPrinter(target: string, androidUsbContext: any);    
+    static searchPrinter(target?: string, context?): StarIOPortInfo[] {
+        if (context != undefined) {
+            throw new Error("Android Context is not supported on IOS");
+        }
+        if (target) {
+            throw new Error("Specifying search target is not supported in this version.");
+        }
+        let searchResult = SMPort.searchPrinter();
+        let a = [];
+        for (let i = 0, len = searchResult.count; i < len; i++) {
+            a.push(new StarIOPortInfo(searchResult.objectAtIndex(i)));
+        }
+        return a;
+    }
     // static compressRasterData(width: number, height: number, imageData: string, portSettings: string): any {
     //     return SMPort.compressRasterData(width, height, imageData, portSettings);
     // }
@@ -34,15 +51,6 @@ export class StarIOPort {
 
     releasePort() {
         SMPort.releasePort(this._port);
-    }
-
-    static searchPrinter(): StarIOPortInfo[] {
-        let searchResult = SMPort.searchPrinter();
-        let a = [];
-        for (let i = 0, len = searchResult.count; i < len; i++) {
-            a.push(searchResult.objectAtIndex(i));
-        }
-        return a;
     }
 
     private constructor(port: SMPort) {
@@ -111,24 +119,24 @@ export class StarIOPort {
     //     return this._port.getOnlineStatusWithError();
     // }
 
-    getParsedStatus(level: number): StarIOPrinterStatus {
-        let status: interop.Reference<StarPrinterStatus | StarPrinterStatus_1 | StarPrinterStatus_2>;
-        switch (level) {
-            case 0:
-                status = new interop.Reference<StarPrinterStatus>();
-                break;
-            case 1:
-                status = new interop.Reference<StarPrinterStatus_1>();
-                break;
-            case 2:
-            default:
-                status = new interop.Reference<StarPrinterStatus_2>();
-                level = 2;
-                break;
-        }
-        this._port.getParsedStatus(status, level);
-        return status.value;
-    }
+    // getParsedStatus(level: number): StarIOPrinterStatus {
+    //     let status: interop.Reference<StarPrinterStatus | StarPrinterStatus_1 | StarPrinterStatus_2>;
+    //     switch (level) {
+    //         case 0:
+    //             status = new interop.Reference<StarPrinterStatus>();
+    //             break;
+    //         case 1:
+    //             status = new interop.Reference<StarPrinterStatus_1>();
+    //             break;
+    //         case 2:
+    //         default:
+    //             status = new interop.Reference<StarPrinterStatus_2>();
+    //             level = 2;
+    //             break;
+    //     }
+    //     this._port.getParsedStatus(status, level);
+    //     return status.value;
+    // }
 
     getPortName(): string {
         return this._port.portName();

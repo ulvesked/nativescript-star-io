@@ -11,5 +11,14 @@ export class StarIOPortInfo {
     }
     get modelName(): string {
         return this._portInfo.getModelName();
+    } 
+    getPortName() {
+        return this._portInfo.getPortName();
+    }
+    getMacAddress() {
+        return this._portInfo.getMacAddress();
+    }
+    getModelName() {
+        return this._portInfo.getModelName();
     }
 }

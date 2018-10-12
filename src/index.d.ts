@@ -26,8 +26,8 @@ import {
     ContrastMode, 
     CursorMode,
     Rect
-} from './common/common';
-import { StarIOCommandBuilder } from './common/commandbuilder';
+} from './stario-common';
+import { StarIOCommandBuilder } from './stario-commandbuilder';
 export { 
     StarIOPort, 
     StarIOPortInfo,
